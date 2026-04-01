@@ -53,7 +53,7 @@ public class Main {
 
     window.add(openButton);
     window.add(saveButton);
-    JTextField fileName = new JTextField(20);
+    JTextField fileName = new JTextField("a.txt");
     fileName.setSize(150, 50);
     fileName.setLocation(50, 5);
     fileName.setBackground(new Color(50, 50, 50)); // dark gray
