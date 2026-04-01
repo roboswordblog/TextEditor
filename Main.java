@@ -63,6 +63,20 @@ public class Main {
         window.add(fileName);
         window.getContentPane().setBackground(new Color(30, 30, 30));
 
+
+        JTextArea contentArea = new JTextArea();
+        contentArea.setBackground(new Color(30, 30, 30)); // dark background
+        contentArea.setForeground(Color.WHITE);           // white text
+        contentArea.setCaretColor(Color.WHITE);           // cursor color
+        contentArea.setFont(new Font("Consolas", Font.PLAIN, 14));
+        contentArea.setLineWrap(true);                    // wrap long lines
+        contentArea.setWrapStyleWord(true);
+
+        JScrollPane content = new JScrollPane(contentArea);
+        content.setBounds(100, 100, 600, 400);
+        content.setBorder(BorderFactory.createLineBorder(new Color(70, 70, 70))); // optional border
+
+        window.add(content);
         window.setVisible(true);
     }
 }
