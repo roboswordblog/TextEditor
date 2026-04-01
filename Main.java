@@ -13,8 +13,8 @@ public class Main {
 
         JButton saveButton = new JButton("Save");
         JButton openButton = new JButton("Load");
-        saveButton.setBounds(10, 10, 100, 40);
-        openButton.setBounds(110, 10, 100, 40);
+        saveButton.setBounds(210, 10, 100, 40);
+        openButton.setBounds(310, 10, 100, 40);
         saveButton.setBackground(new Color(45, 45, 45));
         openButton.setBackground(new Color(45, 45, 45));
         saveButton.setForeground(Color.WHITE);
@@ -29,6 +29,7 @@ public class Main {
         openButton.setFont(new Font("Consolas", Font.BOLD, 14));
         openButton.setOpaque(true);
         openButton.setContentAreaFilled(true);
+
         saveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 saveButton.setBackground(new Color(70, 70, 70)); // lighter gray on hover
@@ -51,10 +52,22 @@ public class Main {
 
         window.add(openButton);
         window.add(saveButton);
-
-
+        JTextField fileName = getJTextField();
+        window.add(fileName);
         window.getContentPane().setBackground(new Color(30, 30, 30));
 
         window.setVisible(true);
+    }
+
+    private static JTextField getJTextField() {
+        JTextField fileName = new JTextField(20);
+        fileName.setSize(150, 50);
+        fileName.setLocation(50, 5);
+        fileName.setBackground(new Color(50, 50, 50)); // dark gray
+        fileName.setForeground(Color.WHITE);          // white text
+        fileName.setCaretColor(Color.WHITE);          // caret color
+        fileName.setBorder(BorderFactory.createLineBorder(new Color(70, 70, 70))); // subtle border
+        fileName.setFont(new Font("Consolas", Font.PLAIN, 14)); // IDE-style font
+        return fileName;
     }
 }
