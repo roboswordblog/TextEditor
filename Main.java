@@ -76,7 +76,7 @@ public class Main {
     JScrollPane content = new JScrollPane(contentArea);
     content.setBounds(100, 100, 600, 400);
     content.setBorder(BorderFactory.createLineBorder(new Color(70, 70, 70))); // optional border
-
+    saveButton.setAction(manage.save(contentArea.getText()))
     window.add(content);
     window.setVisible(true);
   }
