@@ -29,6 +29,25 @@ public class Main {
         openButton.setFont(new Font("Consolas", Font.BOLD, 14));
         openButton.setOpaque(true);
         openButton.setContentAreaFilled(true);
+        saveButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                saveButton.setBackground(new Color(70, 70, 70)); // lighter gray on hover
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                saveButton.setBackground(new Color(45, 45, 45)); // revert color
+            }
+        });
+        openButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                openButton.setBackground(new Color(70, 70, 70)); // lighter gray on hover
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                openButton.setBackground(new Color(45, 45, 45)); // revert color
+            }
+        });
+
 
         window.add(openButton);
         window.add(saveButton);
