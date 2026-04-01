@@ -52,14 +52,6 @@ public class Main {
 
         window.add(openButton);
         window.add(saveButton);
-        JTextField fileName = getJTextField();
-        window.add(fileName);
-        window.getContentPane().setBackground(new Color(30, 30, 30));
-
-        window.setVisible(true);
-    }
-
-    private static JTextField getJTextField() {
         JTextField fileName = new JTextField(20);
         fileName.setSize(150, 50);
         fileName.setLocation(50, 5);
@@ -68,6 +60,9 @@ public class Main {
         fileName.setCaretColor(Color.WHITE);          // caret color
         fileName.setBorder(BorderFactory.createLineBorder(new Color(70, 70, 70))); // subtle border
         fileName.setFont(new Font("Consolas", Font.PLAIN, 14)); // IDE-style font
-        return fileName;
+        window.add(fileName);
+        window.getContentPane().setBackground(new Color(30, 30, 30));
+
+        window.setVisible(true);
     }
 }
