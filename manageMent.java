@@ -15,7 +15,7 @@ public class manageMent {
         System.out.println("An error occurred: File not found.");
         e.printStackTrace();
     }}
-    void save(){
-        
+    void save(String content) throws IOException{
+        Files.writeString(Path.of("a.txt"), content);
     }
 }
