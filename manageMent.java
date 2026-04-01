@@ -15,4 +15,7 @@ public class manageMent {
         System.out.println("An error occurred: File not found.");
         e.printStackTrace();
     }}
+    void save(){
+        
+    }
 }
