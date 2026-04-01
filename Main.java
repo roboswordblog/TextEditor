@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class Main {
   public static void main(String[] args) {
@@ -13,7 +14,7 @@ public class Main {
     window.setLayout(null);
 
     JButton saveButton = new JButton("Save");
-    JButton openButton = new JButton("Load");
+    JButton openButton = new JButton("New");
     saveButton.setBounds(210, 10, 100, 40);
     openButton.setBounds(310, 10, 100, 40);
     saveButton.setBackground(new Color(45, 45, 45));
@@ -76,8 +77,22 @@ public class Main {
     JScrollPane content = new JScrollPane(contentArea);
     content.setBounds(100, 100, 600, 400);
     content.setBorder(BorderFactory.createLineBorder(new Color(70, 70, 70))); // optional border
-    saveButton.setAction(manage.save(contentArea.getText()))
-    window.add(content);
+
+    saveButton.addActionListener(e -> {
+      try {
+        // Dynamically get current text and filename when button is clicked
+        String currentContent = contentArea.getText();
+        String currentFile = fileName.getText();
+        manage.save(currentContent);
+        JOptionPane.showMessageDialog(window, "File Saved!");
+      } catch (IOException ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(window, "Save Failed: " + ex.getMessage());
+      }
+    });
+
+      window.add(content);
     window.setVisible(true);
   }
+
 }
